@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Script to demonstrate piping in Linux
+
+echo "Overview of Piping in Linux"
+
+# Using 'ls' and 'grep' to filter file names
+echo -e "\n List all .sh files in the current directory"
+ls | grep ".sh"
+
+# Using 'ps' and 'grep' to find a process
+echo -e "\n Find all 'bash' processes running"
+ps aux | grep "bash"
+
+# Using 'cat', 'sort', and 'uniq' to process a file
+echo -e "\n Sort and remove duplicate lines from a file"
+echo -e "apple\norange\nbanana\napple\nbanana" > fruits.txt
+cat fruits.txt | sort | uniq
+
+# Using 'echo', 'tr', and 'wc' to manipulate and count characters
+echo -e "\n Convert text to uppercase and count characters"
+echo "hello world" | tr '[:lower:]' '[:upper:]' | wc -c
+
+# Cleanup
+rm fruits.txt
+
+echo -e "\nPiping examples completed."
